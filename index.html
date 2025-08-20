@@ -3,46 +3,91 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Love u</title>
+  <title>Nos Souvenirs 💙</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
       margin: 0;
       padding: 0;
-      background: #f0f2f5;
+      background: #89CFF0; /* Baby Blue */
       color: #333;
       text-align: center;
     }
     header {
-      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      background: linear-gradient(135deg, #89CFF0, #FFB6C1);
+      padding: 60px 20px;
       color: white;
-      padding: 120px 20px;
+      border-bottom-left-radius: 50% 20%;
+      border-bottom-right-radius: 50% 20%;
     }
     header h1 {
-      font-size: 3em;
+      font-size: 2.8em;
       margin: 0;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
     }
     header p {
-      font-size: 1.2em;
+      font-size: 1.3em;
       margin-top: 10px;
     }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+    .photo {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+      padding: 15px;
+      transition: transform 0.3s;
+    }
+    .photo:hover {
+      transform: scale(1.03);
+    }
+    .photo img {
+      max-width: 100%;
+      border-radius: 12px;
+    }
+    .caption {
+      margin-top: 12px;
+      font-style: italic;
+      color: #FF69B4; /* Hot Pink pour romantisme */
+    }
     footer {
-      background: #2c3e50;
+      background: #FFB6C1;
       color: white;
-      text-align: center;
-      padding: 20px;
+      padding: 25px;
       margin-top: 50px;
+      font-size: 1.1em;
+      border-top-left-radius: 40% 15%;
+      border-top-right-radius: 40% 15%;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Bienvenue sur mon site 🚀</h1>
-    <p>Un design simple et moderne</p>
+    <h1>Nos Souvenirs 💙</h1>
+    <p>Un peu de bleu pour toi, et tout mon cœur pour nous.</p>
   </header>
 
+  <div class="gallery">
+    <div class="photo">
+      <img src="https://picsum.photos/400/300?random=1" alt="souvenir 1">
+      <p class="caption">"Ce moment restera toujours dans mon cœur."</p>
+    </div>
+    <div class="photo">
+      <img src="https://picsum.photos/400/300?random=2" alt="souvenir 2">
+      <p class="caption">"Ton sourire valait mille soleils."</p>
+    </div>
+    <div class="photo">
+      <img src="https://picsum.photos/400/300?random=3" alt="souvenir 3">
+      <p class="caption">"Chaque instant avec toi était un cadeau."</p>
+    </div>
+  </div>
+
   <footer>
-    <p>&copy; 2025 - Mon Site | Créé avec ❤️</p>
+    <p>Avec tout mon amour 💙💕</p>
   </footer>
 </body>
 </html>
