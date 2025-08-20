@@ -1,93 +1,95 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nos Souvenirs 💙</title>
+  <title>ذكرياتنا 💙</title>
   <style>
     body {
-      font-family: 'Segoe UI', Tahoma, sans-serif;
       margin: 0;
-      padding: 0;
+      font-family: 'Amiri', serif;
       background: #89CFF0; /* Baby Blue */
       color: #333;
+    }
+    section {
+      min-height: 100vh; /* كل قسم يأخذ ارتفاع شاشة كاملة */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
       text-align: center;
-    }
-    header {
-      background: linear-gradient(135deg, #89CFF0, #FFB6C1);
-      padding: 60px 20px;
-      color: white;
-      border-bottom-left-radius: 50% 20%;
-      border-bottom-right-radius: 50% 20%;
-    }
-    header h1 {
-      font-size: 2.8em;
-      margin: 0;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
-    }
-    header p {
-      font-size: 1.3em;
-      margin-top: 10px;
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      padding: 40px;
-    }
-    .photo {
       background: white;
-      border-radius: 15px;
+      border-radius: 30px;
+      margin: 40px;
       box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-      padding: 15px;
-      transition: transform 0.3s;
     }
-    .photo:hover {
-      transform: scale(1.03);
+    section:nth-child(even) {
+      background: #E6F4FA; /* تدرج أزرق فاتح */
     }
-    .photo img {
-      max-width: 100%;
-      border-radius: 12px;
+    h2 {
+      color: #FF69B4;
+      margin-bottom: 20px;
     }
-    .caption {
-      margin-top: 12px;
-      font-style: italic;
-      color: #FF69B4; /* Hot Pink pour romantisme */
+    p {
+      font-size: 1.2em;
+      line-height: 1.8;
+      margin: 15px 0;
     }
-    footer {
-      background: #FFB6C1;
-      color: white;
-      padding: 25px;
-      margin-top: 50px;
-      font-size: 1.1em;
-      border-top-left-radius: 40% 15%;
-      border-top-right-radius: 40% 15%;
+    img {
+      max-width: 80%;
+      border-radius: 15px;
+      margin: 20px 0;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .audio-player {
+      margin-top: 15px;
+    }
+    audio {
+      width: 250px;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Nos Souvenirs 💙</h1>
-    <p>Un peu de bleu pour toi, et tout mon cœur pour nous.</p>
-  </header>
 
-  <div class="gallery">
-    <div class="photo">
-      <img src="https://picsum.photos/400/300?random=1" alt="souvenir 1">
-      <p class="caption">"Ce moment restera toujours dans mon cœur."</p>
+  <!-- الصفحة الأولى -->
+  <section>
+    <h2>الصفحة الأولى 💙</h2>
+    <img src="https://picsum.photos/500/300?random=1" alt="صورة 1">
+    <p>هنا تكتب كلماتك النابعة من قلبك... 🌹</p>
+    <div class="audio-player">
+      <audio controls>
+        <source src="music1.mp3" type="audio/mp3">
+        متصفحك لا يدعم تشغيل الصوت.
+      </audio>
     </div>
-    <div class="photo">
-      <img src="https://picsum.photos/400/300?random=2" alt="souvenir 2">
-      <p class="caption">"Ton sourire valait mille soleils."</p>
-    </div>
-    <div class="photo">
-      <img src="https://picsum.photos/400/300?random=3" alt="souvenir 3">
-      <p class="caption">"Chaque instant avec toi était un cadeau."</p>
-    </div>
-  </div>
+  </section>
 
-  <footer>
-    <p>Avec tout mon amour 💙💕</p>
-  </footer>
+  <!-- الصفحة الثانية -->
+  <section>
+    <h2>الصفحة الثانية 💕</h2>
+    <img src="https://picsum.photos/500/300?random=2" alt="صورة 2">
+    <p>وهنا تضيف ذكرياتك الجميلة... ✨</p>
+    <div class="audio-player">
+      <audio controls>
+        <source src="music2.mp3" type="audio/mp3">
+        متصفحك لا يدعم تشغيل الصوت.
+      </audio>
+    </div>
+  </section>
+
+  <!-- الصفحة الثالثة -->
+  <section>
+    <h2>الصفحة الثالثة 🌸</h2>
+    <img src="https://picsum.photos/500/300?random=3" alt="صورة 3">
+    <p>وهنا رسالة أخرى بخط يدك الجميل ❤️</p>
+    <div class="audio-player">
+      <audio controls>
+        <source src="music3.mp3" type="audio/mp3">
+        متصفحك لا يدعم تشغيل الصوت.
+      </audio>
+    </div>
+  </section>
+
 </body>
 </html>
