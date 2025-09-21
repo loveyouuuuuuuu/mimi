@@ -4,45 +4,77 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Love U 💙</title>
+
+  <!-- خط Google -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- مكتبة أنيميشن AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
   <style>
     html {
-      scroll-behavior: smooth; /* انسيابية */
+      scroll-behavior: smooth;
     }
     body {
       margin: 0;
-      font-family: 'Amiri', serif;
-      background: #89CFF0; /* Baby Blue */
+      font-family: 'Tajawal', sans-serif;
+      background: #fefefe;
       color: #333;
     }
     header {
       background: linear-gradient(135deg, #89CFF0, #FFB6C1);
-      padding: 40px 20px;
-      text-align: center;
-      color: white;
+      padding: 20px;
       position: sticky;
       top: 0;
       z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    header nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
     }
     header h1 {
-      margin: 0 0 10px 0;
-      font-size: 2em;
+      margin: 0;
+      color: white;
+      font-size: 1.8em;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 15px;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #333;
     }
     #daysCounter {
-      font-size: 1.4em;
+      font-size: 1.1em;
+      margin-top: 5px;
+      color: #fff;
       font-weight: bold;
     }
+
     section {
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 40px 20px;
+      padding: 60px 20px;
       text-align: center;
       background: white;
       border-radius: 30px;
       margin: 40px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
     }
     section:nth-child(even) {
       background: #E6F4FA;
@@ -50,6 +82,7 @@
     h2 {
       color: #FF69B4;
       margin-bottom: 20px;
+      font-size: 1.6em;
     }
     p {
       font-size: 1.2em;
@@ -67,6 +100,11 @@
       max-width: 45%;
       border-radius: 15px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.4s, box-shadow 0.4s;
+    }
+    .images img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
     }
     .audio-player {
       margin-top: 15px;
@@ -74,24 +112,39 @@
     audio {
       width: 250px;
     }
+
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9em;
+    }
   </style>
 </head>
 <body>
 
+  <!-- رأس الموقع -->
   <header>
-    <h1>Love U 💙</h1>
+    <nav>
+      <h1>Love U 💙</h1>
+      <ul>
+        <li><a href="#page1">الصفحة الأولى</a></li>
+        <li><a href="#page2">الصفحة الثانية</a></li>
+      </ul>
+    </nav>
     <div id="daysCounter">...</div>
   </header>
 
   <!-- الصفحة الأولى -->
-  <section>
+  <section id="page1" data-aos="fade-up">
     <h2>الصفحة الأولى 💙</h2>
     <div class="images">
-      <img src="https://picsum.photos/400/300?random=1" alt="صورة 1">
-      <img src="https://picsum.photos/400/300?random=2" alt="صورة 2">
+      <img src="https://picsum.photos/400/300?random=1" alt="صورة 1" data-aos="zoom-in">
+      <img src="https://picsum.photos/400/300?random=2" alt="صورة 2" data-aos="zoom-in">
     </div>
-    <p>هنا تكتب كلماتك النابعة من قلبك... 🌹</p>
-    <div class="audio-player">
+    <p data-aos="fade-up">هنا تكتب كلماتك النابعة من قلبك... 🌹</p>
+    <div class="audio-player" data-aos="fade-up">
       <audio controls>
         <source src="music1.mp3" type="audio/mp3">
         متصفحك لا يدعم تشغيل الصوت.
@@ -100,14 +153,14 @@
   </section>
 
   <!-- الصفحة الثانية -->
-  <section>
+  <section id="page2" data-aos="fade-up">
     <h2>الصفحة الثانية 💕</h2>
     <div class="images">
-      <img src="https://picsum.photos/400/300?random=3" alt="صورة 3">
-      <img src="https://picsum.photos/400/300?random=4" alt="صورة 4">
+      <img src="https://picsum.photos/400/300?random=3" alt="صورة 3" data-aos="zoom-in">
+      <img src="https://picsum.photos/400/300?random=4" alt="صورة 4" data-aos="zoom-in">
     </div>
-    <p>ذكريات جميلة أخرى ✨</p>
-    <div class="audio-player">
+    <p data-aos="fade-up">ذكريات جميلة أخرى ✨</p>
+    <div class="audio-player" data-aos="fade-up">
       <audio controls>
         <source src="music2.mp3" type="audio/mp3">
         متصفحك لا يدعم تشغيل الصوت.
@@ -115,22 +168,32 @@
     </div>
   </section>
 
-  <!-- يمكنك نسخ القسم أعلاه وتكراره لصفحات أخرى -->
+  <!-- التذييل -->
+  <footer>
+    صنع بحب 💙 — لك وحدك 🌹
+  </footer>
 
+  <!-- مكتبة AOS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    // عداد الأيام منذ 27 أوت 2024
+    AOS.init({ duration: 1000 });
+
+    // عداد الأيام المباشر
     function updateCounter() {
-      const startDate = new Date('2024-08-27'); // تاريخ البداية
+      const startDate = new Date('2024-08-27T00:00:00'); 
       const now = new Date();
       const diffTime = now - startDate;
-      const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-      document.getElementById('daysCounter').textContent =
-        `مرت ${diffDays} يومًا منذ 27 أوت 2024 ❤️`;
-    }
-    updateCounter();
-    // تحديث تلقائي كل يوم
-    setInterval(updateCounter, 1000 * 60 * 60); // يحدث كل ساعة (يكفي)
-  </script>
 
+      const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+      const diffHours = Math.floor((diffTime / (1000 * 60 * 60)) % 24);
+      const diffMinutes = Math.floor((diffTime / (1000 * 60)) % 60);
+      const diffSeconds = Math.floor((diffTime / 1000) % 60);
+
+      document.getElementById('daysCounter').textContent =
+        `مرت ${diffDays} يوم و ${diffHours} ساعة و ${diffMinutes} دقيقة و ${diffSeconds} ثانية منذ 27 أوت 2024 ❤️`;
+    }
+    setInterval(updateCounter, 1000);
+    updateCounter();
+  </script>
 </body>
 </html>
