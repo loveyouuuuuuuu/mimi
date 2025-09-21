@@ -178,21 +178,23 @@
   <script>
     AOS.init({ duration: 1000 });
 
-    // عداد الأيام المباشر
+    // عداد الأيام (يحسب من 27/08/2024 الساعة 10:00 صباحًا)
     function updateCounter() {
-      const startDate = new Date('2024-08-27T00:00:00'); 
+      const startDate = new Date('2024-08-27T10:00:00');
       const now = new Date();
+
+      // الفرق بالميلي ثانية
       const diffTime = now - startDate;
 
-      const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-      const diffHours = Math.floor((diffTime / (1000 * 60 * 60)) % 24);
-      const diffMinutes = Math.floor((diffTime / (1000 * 60)) % 60);
-      const diffSeconds = Math.floor((diffTime / 1000) % 60);
+      // الفرق بالأيام (نقسم على 24 ساعة)
+      let diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
 
       document.getElementById('daysCounter').textContent =
-        `مرت ${diffDays} يوم و ${diffHours} ساعة و ${diffMinutes} دقيقة و ${diffSeconds} ثانية منذ 27 أوت 2024 ❤️`;
+        `مرت ${diffDays} يومًا`;
     }
-    setInterval(updateCounter, 1000);
+
+    // تحديث كل دقيقة حتى يتغير العدد بالضبط عند 10:00
+    setInterval(updateCounter, 60000);
     updateCounter();
   </script>
 </body>
