@@ -8,7 +8,7 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="logo.site.png" />
 
-  <!-- خط Tajawal (اختياري، يعمل إذا متصل بالإنترنت) -->
+  <!-- خط Tajawal -->
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
@@ -23,6 +23,7 @@
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       padding: 20px;
+      padding-top: 80px; /* حتى لا يغطي الهيدر أول جزء */
     }
 
     .wrap {
@@ -31,7 +32,7 @@
     }
 
     section {
-      min-height: calc(100vh - 60px); /* يحتسب المساحة عشان يظهر واضح */
+      min-height: calc(100vh - 60px);
       background: #ffffff;
       border-radius: 18px;
       padding: 40px;
@@ -75,22 +76,83 @@
       font-size: 1.15rem;
     }
 
+    /* ======= رأس الصفحة ======= */
+    header {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 25px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+
+    header .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: #FF69B4;
+    }
+
+    header .logo img {
+      height: 38px;
+    }
+
+    header nav a {
+      color: #333;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    header nav a:hover {
+      color: #FF69B4;
+    }
+
+    /* تمرير ناعم عند الضغط على الروابط */
+    html {
+      scroll-behavior: smooth;
+    }
+
     /* استجابة للشاشات الصغيرة */
     @media (max-width: 600px) {
       .audio-player audio { width: 200px; }
       section { padding: 26px; border-radius: 14px; }
       #daysCounter { font-size: 1rem; padding: 10px 14px; }
+      header { flex-direction: column; gap: 8px; }
     }
   </style>
 </head>
 <body>
+
+  <!-- رأس الصفحة -->
+  <header>
+    <div class="logo">
+      <img src="logo.site.png" alt="شعار الموقع">
+      <span>دلوعتي <span style="color:red;">❤️</span></span>
+    </div>
+    <nav>
+      <a href="#page1">الصفحة الأولى</a>
+      <a href="#page2">الصفحة الثانية</a>
+      <a href="#page3">الصفحة الثالثة</a>
+      <a href="#page4">الصفحة الرابعة</a>
+    </nav>
+  </header>
+
   <div class="wrap">
 
     <section id="page1">
       <h2>الصفحة الأولى 💙</h2>
       <p>هنا كلماتك الخاصة بالصفحة الأولى... يمكنك تعديل النص والصور كما تشاء.</p>
       <div class="audio-player">
-        <!-- تأكد أن music1.mp3 موجود في نفس المجلد -->
         <audio controls>
           <source src="music1.mp3" type="audio/mp3">
           متصفحك لا يدعم تشغيل الصوت.
@@ -119,11 +181,10 @@
   <div id="daysCounter">...</div>
 
   <script>
-    // احتسب الأيام منذ 27/08/2024 الساعة 10:00 (بالتوقيت المحلي)
+    // احتسب الأيام منذ 27/08/2024 الساعة 10:00
     document.addEventListener('DOMContentLoaded', () => {
       const el = document.getElementById('daysCounter');
-      // نستخدم new Date(year, monthIndex, day, hours, minutes, seconds) لضمان التوقيت المحلي
-      const start = new Date(2024, 7, 27, 10, 0, 0); // شهر 7 = أغسطس لأن العد من 0
+      const start = new Date(2024, 7, 27, 10, 0, 0); // أغسطس = 7 لأن العد يبدأ من 0
 
       function updateCounter() {
         const now = new Date();
@@ -134,7 +195,6 @@
       }
 
       updateCounter();
-      // نحدّث كل ثانية حتى لو فتحت في 9:59 وانتظر 10:00 سيتم التحديث فوراً
       setInterval(updateCounter, 1000);
     });
   </script>
