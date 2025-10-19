@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Love U 💙</title>
+  <title>Love U</title> <!-- cœur bleu supprimé -->
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="logo.site.png" />
@@ -18,12 +18,12 @@
 
     body {
       font-family: 'Tajawal', sans-serif;
-      background: #000000; /* Body complètement noir */
-      color: #ffffff; /* Texte par défaut blanc */
+      background: #000000; /* Body noir */
+      color: #000000; /* Texte par défaut noir */
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       padding: 20px;
-      padding-top: 80px; /* حتى لا يغطي الهيدر أول جزء */
+      padding-top: 80px; /* pour ne pas couvrir le header */
     }
 
     .wrap {
@@ -32,8 +32,9 @@
     }
 
     section {
+      display: none; /* Masquer toutes les sections par défaut */
       min-height: calc(100vh - 60px);
-      background: #ffffff; /* Fond blanc des sections */
+      background: #ffffff; /* Fond blanc */
       border-radius: 18px;
       padding: 40px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.10);
@@ -42,13 +43,13 @@
       justify-content: center;
       align-items: center;
       margin: 30px 0;
-      color: #ffffff; /* Texte en blanc sur fond blanc -> tu peux changer si besoin */
+      color: #000000; /* Texte noir */
     }
 
     h2 {
-      color: #ffffff; /* Titres en blanc */
       font-size: 1.8rem;
       margin-bottom: 12px;
+      color: #000000; /* Titres noirs */
     }
 
     p {
@@ -57,32 +58,30 @@
       margin-bottom: 18px;
       text-align: center;
       max-width: 820px;
-      color: #ffffff; /* Texte blanc */
+      color: #000000; /* Texte noir */
     }
 
-    /* العداد — ثابت في أسفل الشاشة في الوسط */
     #daysCounter {
       position: fixed;
       left: 50%;
       transform: translateX(-50%);
       bottom: 22px;
       z-index: 9999;
-      background: rgba(0,0,0,0.85); /* Fond noir transparent */
+      background: rgba(0,0,0,0.85);
       padding: 12px 20px;
       border-radius: 999px;
       box-shadow: 0 6px 18px rgba(0,0,0,0.50);
       font-weight: 700;
-      color: #ffffff; /* Texte blanc */
+      color: #ffffff; 
       font-size: 1.15rem;
     }
 
-    /* ======= رأس الصفحة ======= */
     header {
       position: fixed;
       top: 0;
       right: 0;
       left: 0;
-      background: rgba(0,0,0,0.95); /* Fond noir du header */
+      background: rgba(0,0,0,0.95);
       backdrop-filter: blur(10px);
       display: flex;
       align-items: center;
@@ -90,7 +89,7 @@
       padding: 10px 25px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.5);
       z-index: 1000;
-      color: #ffffff; /* Texte blanc */
+      color: #ffffff;
     }
 
     header .logo {
@@ -99,7 +98,7 @@
       gap: 10px;
       font-weight: 700;
       font-size: 1.3rem;
-      color: #ffffff; /* Texte du logo en blanc */
+      color: #ffffff;
     }
 
     header .logo img {
@@ -107,23 +106,22 @@
     }
 
     header nav a {
-      color: #ffffff; /* Liens du header en blanc */
+      color: #ffffff;
       text-decoration: none;
       margin: 0 10px;
       font-weight: 600;
       transition: color 0.2s;
+      cursor: pointer;
     }
 
     header nav a:hover {
-      color: #ffcc00; /* Couleur au survol */
+      color: #ffcc00;
     }
 
-    /* تمرير ناعم عند الضغط على الروابط */
     html {
       scroll-behavior: smooth;
     }
 
-    /* استجابة للشاشات الصغيرة */
     @media (max-width: 600px) {
       section { padding: 26px; border-radius: 14px; }
       #daysCounter { font-size: 1rem; padding: 10px 14px; }
@@ -133,52 +131,66 @@
 </head>
 <body>
 
-  <!-- رأس الصفحة -->
+  <!-- Header -->
   <header>
     <div class="logo">
       <img src="logo.site.png" alt="شعار الموقع">
       <span>دلوعتي <span style="color:red;">❤️</span></span>
     </div>
     <nav>
-      <a href="#page1">الصفحة الأولى</a>
-      <a href="#page2">الصفحة الثانية</a>
-      <a href="#page3">الصفحة الثالثة</a>
-      <a href="#page4">الصفحة الرابعة</a>
+      <a data-target="page1">الصفحة الأولى</a>
+      <a data-target="page2">الصفحة الثانية</a>
+      <a data-target="page3">الصفحة الثالثة</a>
+      <a data-target="page4">الصفحة الرابعة</a>
     </nav>
   </header>
 
   <div class="wrap">
-
     <section id="page1">
-      <h2>الصفحة الأولى 💙</h2>
+      <h2>الصفحة الأولى</h2>
       <p>هنا كلماتك الخاصة بالصفحة الأولى... يمكنك تعديل النص والصور كما تشاء.</p>
     </section>
 
     <section id="page2">
-      <h2>الصفحة الثانية 💕</h2>
+      <h2>الصفحة الثانية</h2>
       <p>هنا كلمات الصفحة الثانية... ضع الموسيقى لاحقًا عندما تكون جاهزة.</p>
     </section>
 
     <section id="page3">
-      <h2>الصفحة الثالثة 🌸</h2>
+      <h2>الصفحة الثالثة</h2>
       <p>هنا كلمات الصفحة الثالثة...</p>
     </section>
 
     <section id="page4">
-      <h2>الصفحة الرابعة 🌟</h2>
+      <h2>الصفحة الرابعة</h2>
       <p>هنا كلمات الصفحة الرابعة...</p>
     </section>
-
   </div>
 
-  <!-- العداد أسفل الوسط -->
   <div id="daysCounter">...</div>
 
   <script>
-    // احتسب الأيام منذ 27/08/2024 الساعة 10:00
     document.addEventListener('DOMContentLoaded', () => {
+      const sections = document.querySelectorAll('section');
+      const links = document.querySelectorAll('header nav a');
+
+      // Affiche la première section par défaut
+      sections.forEach(s => s.style.display = 'none');
+      sections[0].style.display = 'flex';
+
+      // Navigation
+      links.forEach(link => {
+        link.addEventListener('click', () => {
+          const target = link.getAttribute('data-target');
+          sections.forEach(s => {
+            s.id === target ? s.style.display = 'flex' : s.style.display = 'none';
+          });
+        });
+      });
+
+      // Compteur
       const el = document.getElementById('daysCounter');
-      const start = new Date(2024, 7, 27, 10, 0, 0); // أغسطس = 7 لأن العد يبدأ من 0
+      const start = new Date(2024, 7, 27, 10, 0, 0);
 
       function updateCounter() {
         const now = new Date();
@@ -192,5 +204,6 @@
       setInterval(updateCounter, 1000);
     });
   </script>
+
 </body>
 </html>
