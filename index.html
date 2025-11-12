@@ -29,6 +29,7 @@
     .wrap {
       max-width: 1000px;
       margin: 0 auto;
+      padding-top: 20px; /* espace léger sous le header */
     }
 
     section {
@@ -87,10 +88,11 @@
       align-items: center;
       justify-content: space-between;
       padding: 10px 25px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
       z-index: 1000;
       color: #ffffff;
-      border-bottom: 2px solid #ffffff; /* ← الخط الأبيض الفاصل */
+
+      /* --- الخط الفاصل الرمادي الرقيق مثل Reddit --- */
+      border-bottom: 1px solid #e0e0e0; 
     }
 
     header .logo {
