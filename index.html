@@ -3,195 +3,152 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>دلوعتي ❤️</title>
+  <title>Love U 💙</title>
+  <title>Love U</title> <!-- cœur bleu supprimé -->
 
-  <!-- أيقونة -->
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="logo.site.png" />
+@@ -18,12 +18,12 @@
 
-  <!-- خط Tajawal -->
-  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
-
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { height: 100%; scroll-behavior: smooth; }
     body {
       font-family: 'Tajawal', sans-serif;
-      background: linear-gradient(135deg, #000000, #1a1a1a);
-      color: #fff;
+      background: #000000; /* Body complètement noir */
+      color: #ffffff; /* Texte par défaut blanc */
+      background: #000000; /* Body noir */
+      color: #000000; /* Texte par défaut noir */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
       padding: 20px;
-      padding-top: 80px;
-      position: relative;
-      overflow-x: hidden;
+      padding-top: 80px; /* حتى لا يغطي الهيدر أول جزء */
+      padding-top: 80px; /* pour ne pas couvrir le header */
     }
 
-    /* خلفية خفيفة */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: url('hearts-bg.png') center/cover no-repeat;
-      opacity: 0.07;
-      pointer-events: none;
-      z-index: 0;
+    .wrap {
+@@ -32,8 +32,9 @@
     }
-
-    .wrap { max-width: 1000px; margin: 0 auto; position: relative; z-index: 2; }
-
-    header {
-      position: fixed;
-      top: 0; right: 0; left: 0;
-      background: rgba(0,0,0,0.8);
-      backdrop-filter: blur(10px);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 12px 25px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.5);
-      z-index: 1000;
-    }
-
-    header .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 700;
-      font-size: 1.3rem;
-      color: #fff;
-    }
-
-    header .logo img { height: 38px; }
-
-    header .logo span span {
-      animation: pulse 1.6s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.3); opacity: 0.8; }
-    }
-
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 12px;
-      font-weight: 600;
-      transition: color 0.3s, transform 0.3s;
-      cursor: pointer;
-    }
-    nav a:hover { color: #ff4d6d; transform: scale(1.1); }
 
     section {
-      display: none;
+      display: none; /* Masquer toutes les sections par défaut */
       min-height: calc(100vh - 60px);
-      background: rgba(255,255,255,0.08);
-      border-radius: 20px;
+      background: #ffffff; /* Fond blanc des sections */
+      background: #ffffff; /* Fond blanc */
+      border-radius: 18px;
       padding: 40px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-      display: flex;
-      flex-direction: column;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.10);
+@@ -42,13 +43,13 @@
       justify-content: center;
       align-items: center;
       margin: 30px 0;
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-
-    section.active {
-      opacity: 1;
-      transform: translateY(0);
-      display: flex !important;
+      color: #ffffff; /* Texte en blanc sur fond blanc -> tu peux changer si besoin */
+      color: #000000; /* Texte noir */
     }
 
     h2 {
-      font-size: 1.9rem;
+      color: #ffffff; /* Titres en blanc */
+      font-size: 1.8rem;
       margin-bottom: 12px;
-      color: #ff4d6d;
-      text-shadow: 0 2px 6px rgba(255,77,109,0.5);
+      color: #000000; /* Titres noirs */
     }
 
     p {
-      font-size: 1.15rem;
-      line-height: 1.8;
+@@ -57,40 +58,38 @@
+      margin-bottom: 18px;
       text-align: center;
       max-width: 820px;
-      color: #f7f7f7;
+      color: #ffffff; /* Texte blanc */
+      color: #000000; /* Texte noir */
     }
 
+    /* العداد — ثابت في أسفل الشاشة في الوسط */
     #daysCounter {
       position: fixed;
       left: 50%;
       transform: translateX(-50%);
       bottom: 22px;
       z-index: 9999;
-      background: linear-gradient(90deg, #ff4d6d, #c9184a);
+      background: rgba(0,0,0,0.85); /* Fond noir transparent */
+      background: rgba(0,0,0,0.85);
       padding: 12px 20px;
       border-radius: 999px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.50);
       font-weight: 700;
-      color: #fff;
+      color: #ffffff; /* Texte blanc */
+      color: #ffffff; 
       font-size: 1.15rem;
     }
 
-    /* زر تغيير الوضع */
-    #themeToggle {
+    /* ======= رأس الصفحة ======= */
+    header {
       position: fixed;
-      top: 18px;
-      left: 20px;
-      background: transparent;
-      border: 2px solid #fff;
-      color: #fff;
-      border-radius: 50%;
-      width: 38px;
+      top: 0;
+      right: 0;
+      left: 0;
+      background: rgba(0,0,0,0.95); /* Fond noir du header */
+      background: rgba(0,0,0,0.95);
+      backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 25px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      z-index: 1000;
+      color: #ffffff; /* Texte blanc */
+      color: #ffffff;
+    }
+
+    header .logo {
+@@ -99,31 +98,30 @@
+      gap: 10px;
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: #ffffff; /* Texte du logo en blanc */
+      color: #ffffff;
+    }
+
+    header .logo img {
       height: 38px;
-      font-size: 18px;
+    }
+
+    header nav a {
+      color: #ffffff; /* Liens du header en blanc */
+      color: #ffffff;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: 600;
+      transition: color 0.2s;
       cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    #themeToggle:hover {
-      background: #ff4d6d;
-      border-color: #ff4d6d;
     }
 
-    /* الوضع الليلي */
-    body.dark {
-      background: #fff;
-      color: #000;
-    }
-    body.dark section {
-      background: rgba(0,0,0,0.05);
-      color: #111;
-    }
-    body.dark header {
-      background: rgba(255,255,255,0.9);
-      color: #000;
-    }
-    body.dark nav a { color: #000; }
-    body.dark nav a:hover { color: #c9184a; }
-    body.dark #themeToggle {
-      color: #000;
-      border-color: #000;
+    header nav a:hover {
+      color: #ffcc00; /* Couleur au survol */
+      color: #ffcc00;
     }
 
+    /* تمرير ناعم عند الضغط على الروابط */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* استجابة للشاشات الصغيرة */
     @media (max-width: 600px) {
       section { padding: 26px; border-radius: 14px; }
       #daysCounter { font-size: 1rem; padding: 10px 14px; }
-      header { flex-direction: column; gap: 8px; }
-    }
-  </style>
+@@ -133,52 +131,66 @@
 </head>
 <body>
 
-  <!-- زر الوضع الليلي -->
-  <button id="themeToggle">🌓</button>
-
-  <!-- الهيدر -->
+  <!-- رأس الصفحة -->
+  <!-- Header -->
   <header>
     <div class="logo">
       <img src="logo.site.png" alt="شعار الموقع">
-      <span>دلوعتي <span>❤️</span></span>
+      <span>دلوعتي <span style="color:red;">❤️</span></span>
     </div>
     <nav>
+      <a href="#page1">الصفحة الأولى</a>
+      <a href="#page2">الصفحة الثانية</a>
+      <a href="#page3">الصفحة الثالثة</a>
+      <a href="#page4">الصفحة الرابعة</a>
       <a data-target="page1">الصفحة الأولى</a>
       <a data-target="page2">الصفحة الثانية</a>
       <a data-target="page3">الصفحة الثالثة</a>
@@ -200,66 +157,65 @@
   </header>
 
   <div class="wrap">
-    <section id="page1" class="active">
+
+    <section id="page1">
+      <h2>الصفحة الأولى 💙</h2>
       <h2>الصفحة الأولى</h2>
-      <p>هنا كلماتك الخاصة بالصفحة الأولى... يمكنك تعديل النص والصور كما تشاء ❤️</p>
+      <p>هنا كلماتك الخاصة بالصفحة الأولى... يمكنك تعديل النص والصور كما تشاء.</p>
     </section>
 
     <section id="page2">
+      <h2>الصفحة الثانية 💕</h2>
       <h2>الصفحة الثانية</h2>
-      <p>هنا كلمات الصفحة الثانية... ضع الموسيقى لاحقًا عندما تكون جاهزة 🎵</p>
+      <p>هنا كلمات الصفحة الثانية... ضع الموسيقى لاحقًا عندما تكون جاهزة.</p>
     </section>
 
     <section id="page3">
+      <h2>الصفحة الثالثة 🌸</h2>
       <h2>الصفحة الثالثة</h2>
-      <p>هنا كلمات الصفحة الثالثة... قصة حبكم تستمر 💞</p>
+      <p>هنا كلمات الصفحة الثالثة...</p>
     </section>
 
     <section id="page4">
+      <h2>الصفحة الرابعة 🌟</h2>
       <h2>الصفحة الرابعة</h2>
-      <p>هنا كلمات الصفحة الرابعة... نهاية جميلة مليئة بالحنين 🌹</p>
+      <p>هنا كلمات الصفحة الرابعة...</p>
     </section>
+
   </div>
 
+  <!-- العداد أسفل الوسط -->
   <div id="daysCounter">...</div>
 
   <script>
+    // احتسب الأيام منذ 27/08/2024 الساعة 10:00
     document.addEventListener('DOMContentLoaded', () => {
       const sections = document.querySelectorAll('section');
       const links = document.querySelectorAll('header nav a');
 
-      // عرض الصفحة الأولى
-      sections.forEach(s => s.classList.remove('active'));
-      sections[0].classList.add('active');
+      // Affiche la première section par défaut
+      sections.forEach(s => s.style.display = 'none');
+      sections[0].style.display = 'flex';
 
-      // التنقل بين الصفحات
+      // Navigation
       links.forEach(link => {
         link.addEventListener('click', () => {
           const target = link.getAttribute('data-target');
-          sections.forEach(s => s.classList.remove('active'));
-          document.getElementById(target).classList.add('active');
+          sections.forEach(s => {
+            s.id === target ? s.style.display = 'flex' : s.style.display = 'none';
+          });
         });
       });
 
-      // عدّاد الأيام
+      // Compteur
       const el = document.getElementById('daysCounter');
+      const start = new Date(2024, 7, 27, 10, 0, 0); // أغسطس = 7 لأن العد يبدأ من 0
       const start = new Date(2024, 7, 27, 10, 0, 0);
 
       function updateCounter() {
         const now = new Date();
-        const msPerDay = 24 * 60 * 60 * 1000;
-        let days = Math.floor((now - start) / msPerDay);
-        if (days < 0) days = 0;
-        el.textContent = `مضى ${days} يوم على فراقنا 💔`;
-      }
-
-      updateCounter();
+@@ -192,5 +204,6 @@
       setInterval(updateCounter, 1000);
-
-      // زر تغيير الوضع
-      document.getElementById('themeToggle').onclick = () => {
-        document.body.classList.toggle('dark');
-      };
     });
   </script>
 
