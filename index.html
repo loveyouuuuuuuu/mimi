@@ -14,7 +14,7 @@
   <style>
     /* Reset بسيط */
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { height: 100%; scroll-behavior: smooth; }
+    html, body { height: 100%; scroll-behavior: smooth; overflow-x: hidden; }
 
     body {
       font-family: 'Tajawal', sans-serif;
@@ -28,15 +28,15 @@
     section {
       min-height: calc(100vh - 60px);
       background: #ffffff;
-      width: 100vw; /* ← يجعل القسم بعرض الشاشة بالكامل */
-      border-radius: 0; /* لا نحتاج زوايا مستديرة عند العرض الكامل */
+      width: 95vw; /* ← تقليل العرض قليلاً لتجنّب ظهور شريط التمرير الأفقي */
+      margin: 0 auto; /* ← يجعل القسم في المنتصف */
+      border-radius: 18px;
       padding: 60px 40px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.10);
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      margin: 0; /* إزالة الفراغ بين الأقسام */
       color: #000000;
     }
 
@@ -79,7 +79,7 @@
       backdrop-filter: blur(10px);
       display: flex;
       align-items: center;
-      justify-content: flex-end; /* ← يعيد الشعار للنهاية اليمنى */
+      justify-content: flex-start; /* ← الشعار والاسم على اليسار */
       padding: 10px 25px;
       z-index: 1000;
       color: #ffffff;
@@ -100,7 +100,7 @@
     }
 
     @media (max-width: 600px) {
-      section { padding: 40px 20px; }
+      section { width: 100vw; border-radius: 0; padding: 40px 20px; }
       #daysCounter { font-size: 1rem; padding: 10px 14px; }
     }
   </style>
@@ -115,7 +115,7 @@
     </div>
   </header>
 
-  <!-- الأقسام الكاملة على التوالي -->
+  <!-- الأقسام -->
   <section id="page1">
     <h2>الصفحة الأولى</h2>
     <p>هنا كلماتك الخاصة بالصفحة الأولى... يمكنك تعديل النص والصور كما تشاء.</p>
