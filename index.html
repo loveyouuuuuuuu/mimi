@@ -25,8 +25,6 @@
       background: #000;
       color: #fff;
       overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
       padding-top: 80px; /* pour ne pas que le header couvre le contenu */
     }
 
@@ -43,7 +41,7 @@
       padding: 10px 25px;
       z-index: 1000;
       color: #ffffff;
-      border-bottom: 1px solid #222; /* plus discret que le gris clair */
+      border-bottom: 1px solid #222;
     }
 
     header .logo {
@@ -57,6 +55,43 @@
 
     header .logo img {
       height: 38px;
+    }
+
+    main {
+      max-width: 850px;
+      margin: 120px auto 100px auto;
+      padding: 20px;
+      line-height: 1.8;
+      color: #f5f5f5;
+      text-align: justify;
+    }
+
+    main h2 {
+      text-align: center;
+      color: #ff4d4d;
+      margin-bottom: 25px;
+      font-size: 2rem;
+    }
+
+    main h3 {
+      color: #ffd4d4;
+      margin: 40px 0 10px;
+      font-size: 1.4rem;
+      text-align: right;
+    }
+
+    main p {
+      margin-bottom: 15px;
+      font-size: 1.1rem;
+    }
+
+    blockquote {
+      text-align: center;
+      margin: 25px auto;
+      font-style: italic;
+      color: #ccc;
+      border-right: 3px solid #ff4d4d;
+      padding-right: 15px;
     }
 
     #daysCounter {
@@ -75,10 +110,8 @@
     }
 
     @media (max-width: 600px) {
-      #daysCounter {
-        font-size: 1rem;
-        padding: 10px 14px;
-      }
+      main { padding: 15px; font-size: 1rem; }
+      #daysCounter { font-size: 1rem; padding: 10px 14px; }
     }
   </style>
 </head>
@@ -92,13 +125,43 @@
     </div>
   </header>
 
-  <!-- Compteur de jours -->
+  <!-- Contenu principal -->
+  <main>
+    <h2>الحب: جوهر الوجود وملاذ الروح</h2>
+
+    <p>الحب، تلك الكلمة الصغيرة التي تحمل في حروفها عالماً واسعاً من المعاني، هو أقدم المشاعر وأعمقها في التجربة الإنسانية. منذ أن خُلق الإنسان وهو يسعى إلى الحب، يبحث عنه كما يبحث النبات عن الشمس، وكأن في باطن روحه نداءً خفياً لا يهدأ إلا حين يجد من يبادله الإحساس والحنين.</p>
+
+    <h3>الحب فطرة لا تُكتسب</h3>
+    <p>يولد الإنسان وهو يحمل في داخله بذرة الحب، تنمو مع الأيام وتتفتح مع التجارب. فالحب ليس علماً يُتعلّم، ولا مهارة تُكتسب، بل هو غريزة سامية أودعها الله في النفوس لتكون ميزان التوازن بين العقل والعاطفة، وبين الجسد والروح...</p>
+
+    <h3>أوجه الحب وتجلّياته</h3>
+    <p>ليس الحب نوعاً واحداً، بل له وجوه متعددة تتلون بألوان التجربة الإنسانية...</p>
+
+    <h3>الحب في ميزان الفلسفة</h3>
+    <p>تأمل الفلاسفة الحب طويلاً، فكان عند أفلاطون جسرًا يصل النفس إلى الجمال المطلق...</p>
+
+    <blockquote>“زدني بفرط الحب فيك تحيّرا، وارحم حشى بلظى هواك تسعّرا”</blockquote>
+
+    <h3>الحب بين الواقع والحلم</h3>
+    <p>في عصرنا الحديث، يبدو الحب وكأنه فقد شيئاً من قدسيته...</p>
+
+    <h3>الحب كقوة خالقة</h3>
+    <p>الحب ليس شعوراً عابراً، بل هو طاقة خلاقة تدفع الإنسان إلى العطاء...</p>
+
+    <h3>الحب والنضج الإنساني</h3>
+    <p>لا يكتمل نضج الإنسان إلا حين يعرف كيف يحب...</p>
+
+    <h3>خاتمة: الحب كرسالة حياة</h3>
+    <p>يبقى الحب، رغم اختلاف تعريفاته وتجلياته، أعظم ما وُهب للإنسان...</p>
+  </main>
+
+  <!-- Compteur -->
   <div id="daysCounter">...</div>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const el = document.getElementById('daysCounter');
-      const start = new Date(2024, 7, 27, 10, 0, 0); // Date de départ
+      const start = new Date(2024, 7, 27, 10, 0, 0);
 
       function updateCounter() {
         const now = new Date();
