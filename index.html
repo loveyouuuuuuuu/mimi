@@ -18,30 +18,25 @@
 
     body {
       font-family: 'Tajawal', sans-serif;
-      background: #000000; /* خلفية سوداء */
+      background: #000000;
       color: #000000;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       padding-top: 80px; /* حتى لا يغطي الهيدر المحتوى */
     }
 
-    .wrap {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
     section {
       min-height: calc(100vh - 60px);
-      background: #ffffff; /* خلفية بيضاء لكل قسم */
-      border-radius: 18px;
-      padding: 40px;
+      background: #ffffff;
+      width: 100vw; /* ← يجعل القسم بعرض الشاشة بالكامل */
+      border-radius: 0; /* لا نحتاج زوايا مستديرة عند العرض الكامل */
+      padding: 60px 40px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.10);
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      margin: 40px 0;
+      margin: 0; /* إزالة الفراغ بين الأقسام */
       color: #000000;
     }
 
@@ -84,13 +79,11 @@
       backdrop-filter: blur(10px);
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-end; /* ← يعيد الشعار للنهاية اليمنى */
       padding: 10px 25px;
       z-index: 1000;
       color: #ffffff;
-
-      /* الخط الفاصل الرمادي الرقيق مثل Reddit */
-      border-bottom: 1px solid #e0e0e0;
+      border-bottom: 1px solid #e0e0e0; /* الخط الرمادي الفاتح */
     }
 
     header .logo {
@@ -107,7 +100,7 @@
     }
 
     @media (max-width: 600px) {
-      section { padding: 26px; border-radius: 14px; }
+      section { padding: 40px 20px; }
       #daysCounter { font-size: 1rem; padding: 10px 14px; }
     }
   </style>
@@ -122,27 +115,26 @@
     </div>
   </header>
 
-  <div class="wrap">
-    <section id="page1">
-      <h2>الصفحة الأولى</h2>
-      <p>هنا كلماتك الخاصة بالصفحة الأولى... يمكنك تعديل النص والصور كما تشاء.</p>
-    </section>
+  <!-- الأقسام الكاملة على التوالي -->
+  <section id="page1">
+    <h2>الصفحة الأولى</h2>
+    <p>هنا كلماتك الخاصة بالصفحة الأولى... يمكنك تعديل النص والصور كما تشاء.</p>
+  </section>
 
-    <section id="page2">
-      <h2>الصفحة الثانية</h2>
-      <p>هنا كلمات الصفحة الثانية... ضع الموسيقى لاحقًا عندما تكون جاهزة.</p>
-    </section>
+  <section id="page2">
+    <h2>الصفحة الثانية</h2>
+    <p>هنا كلمات الصفحة الثانية... ضع الموسيقى لاحقًا عندما تكون جاهزة.</p>
+  </section>
 
-    <section id="page3">
-      <h2>الصفحة الثالثة</h2>
-      <p>هنا كلمات الصفحة الثالثة...</p>
-    </section>
+  <section id="page3">
+    <h2>الصفحة الثالثة</h2>
+    <p>هنا كلمات الصفحة الثالثة...</p>
+  </section>
 
-    <section id="page4">
-      <h2>الصفحة الرابعة</h2>
-      <p>هنا كلمات الصفحة الرابعة...</p>
-    </section>
-  </div>
+  <section id="page4">
+    <h2>الصفحة الرابعة</h2>
+    <p>هنا كلمات الصفحة الرابعة...</p>
+  </section>
 
   <div id="daysCounter">...</div>
 
