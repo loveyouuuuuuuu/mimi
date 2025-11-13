@@ -11,53 +11,81 @@
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    html {
+    html, body {
       height: 100%;
+      overflow-x: hidden; /* لا تمرير أفقي نهائي */
       scroll-behavior: smooth;
-      direction: rtl;
-      overflow-x: hidden; /* يمنع التمرير الأفقي كليًا */
+      background: #000; /* الخلفية السوداء */
     }
 
     body {
-      direction: rtl;
-      overflow-y: scroll;
       font-family: 'Tajawal', sans-serif;
-      background: #000000;
-      color: #000000;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
+      direction: rtl;
+      color: #000;
       padding-top: 80px;
     }
 
-    section {
-      min-height: calc(100vh - 60px);
-      background: #ffffff;
-      width: 100%; /* عرض تام بدون تجاوز */
-      max-width: 95%; /* يترك مساحة سوداء بسيطة على الجوانب */
-      margin: 60px auto; /* ← مسافة واضحة بين الصفحات */
-      border-radius: 18px;
-      padding: 60px 40px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.10);
+    /* الهيدر */
+    header {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      background: rgba(0,0,0,0.95);
+      backdrop-filter: blur(10px);
       display: flex;
-      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start; /* الشعار على اليسار */
+      padding: 10px 25px;
+      z-index: 1000;
+      color: #fff;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    header .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: #ffffff;
+    }
+
+    header .logo img {
+      height: 38px;
+    }
+
+    /* الأقسام */
+    section {
+      width: 100%; /* تغطي كامل الشاشة بدون تجاوز */
+      background: #fff;
+      margin: 70px 0; /* مسافة بين الصفحات */
+      border-radius: 18px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.10);
+      color: #000;
+      display: flex;
       justify-content: center;
       align-items: center;
-      color: #000000;
+      flex-direction: column;
+      padding: 60px 20px;
+    }
+
+    /* المحتوى داخل كل صفحة */
+    .content {
+      max-width: 900px; /* المحتوى محدود العرض، لكن الخلفية بيضاء كاملة */
+      text-align: center;
     }
 
     h2 {
       font-size: 1.8rem;
       margin-bottom: 12px;
-      color: #000000;
     }
 
     p {
       font-size: 1.1rem;
       line-height: 1.6;
       margin-bottom: 18px;
-      text-align: center;
-      max-width: 820px;
-      color: #000000;
+      color: #000;
     }
 
     #daysCounter {
@@ -75,37 +103,8 @@
       font-size: 1.15rem;
     }
 
-    header {
-      position: fixed;
-      top: 0;
-      right: 0;
-      left: 0;
-      background: rgba(0,0,0,0.95);
-      backdrop-filter: blur(10px);
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      padding: 10px 25px;
-      z-index: 1000;
-      color: #ffffff;
-      border-bottom: 1px solid #e0e0e0;
-    }
-
-    header .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 700;
-      font-size: 1.3rem;
-      color: #ffffff;
-    }
-
-    header .logo img {
-      height: 38px;
-    }
-
     @media (max-width: 600px) {
-      section { max-width: 100%; border-radius: 0; padding: 40px 20px; margin: 30px 0; }
+      section { margin: 40px 0; border-radius: 0; padding: 40px 10px; }
       #daysCounter { font-size: 1rem; padding: 10px 14px; }
     }
   </style>
@@ -122,23 +121,31 @@
 
   <!-- الأقسام -->
   <section id="page1">
-    <h2>الصفحة الأولى</h2>
-    <p>هنا كلماتك الخاصة بالصفحة الأولى... يمكنك تعديل النص والصور كما تشاء.</p>
+    <div class="content">
+      <h2>الصفحة الأولى</h2>
+      <p>هنا كلماتك الخاصة بالصفحة الأولى... يمكنك تعديل النص والصور كما تشاء.</p>
+    </div>
   </section>
 
   <section id="page2">
-    <h2>الصفحة الثانية</h2>
-    <p>هنا كلمات الصفحة الثانية... ضع الموسيقى لاحقًا عندما تكون جاهزة.</p>
+    <div class="content">
+      <h2>الصفحة الثانية</h2>
+      <p>هنا كلمات الصفحة الثانية... ضع الموسيقى لاحقًا عندما تكون جاهزة.</p>
+    </div>
   </section>
 
   <section id="page3">
-    <h2>الصفحة الثالثة</h2>
-    <p>هنا كلمات الصفحة الثالثة...</p>
+    <div class="content">
+      <h2>الصفحة الثالثة</h2>
+      <p>هنا كلمات الصفحة الثالثة...</p>
+    </div>
   </section>
 
   <section id="page4">
-    <h2>الصفحة الرابعة</h2>
-    <p>هنا كلمات الصفحة الرابعة...</p>
+    <div class="content">
+      <h2>الصفحة الرابعة</h2>
+      <p>هنا كلمات الصفحة الرابعة...</p>
+    </div>
   </section>
 
   <div id="daysCounter">...</div>
