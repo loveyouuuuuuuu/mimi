@@ -8,7 +8,7 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="logo.site.png" />
 
-  <!-- Police Tajawal -->
+  <!-- خط Tajawal -->
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
@@ -18,14 +18,38 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+      scrollbar-gutter: stable;
+    }
+
+    /* ✅ تنسيق شريط التمرير مثل ChatGPT */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #1a1a1a; /* خلفية غامقة مثل ChatGPT */
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: #666; /* رمادي ناعم */
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background-color: #888; /* عند التمرير عليه */
+    }
+
     html, body {
       height: 100%;
       direction: rtl;
       font-family: 'Tajawal', sans-serif;
       background: #000;
       color: #fff;
+      overflow-y: scroll; /* ✅ تمرير رأسي طبيعي */
       overflow-x: hidden;
-      padding-top: 80px; /* pour ne pas que le header couvre le contenu */
+      padding-top: 80px; /* لتجنب تغطية المحتوى بالهيدر */
     }
 
     header {
@@ -57,20 +81,26 @@
       height: 38px;
     }
 
+    /* ✅ النص يبدأ من اليمين */
     main {
+      width: 100%;
       max-width: 850px;
       margin: 120px auto 100px auto;
       padding: 20px;
-      line-height: 1.8;
+      line-height: 1.9;
       color: #f5f5f5;
-      text-align: justify;
+      text-align: right;
+      direction: rtl;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end; /* يجعل النص يبدأ من اليمين */
     }
 
     main h2 {
-      text-align: center;
       color: #ff4d4d;
       margin-bottom: 25px;
       font-size: 2rem;
+      text-align: right;
     }
 
     main h3 {
@@ -83,11 +113,12 @@
     main p {
       margin-bottom: 15px;
       font-size: 1.1rem;
+      text-align: right;
     }
 
     blockquote {
-      text-align: center;
-      margin: 25px auto;
+      text-align: right;
+      margin: 25px 0;
       font-style: italic;
       color: #ccc;
       border-right: 3px solid #ff4d4d;
@@ -105,7 +136,7 @@
       border-radius: 999px;
       box-shadow: 0 6px 18px rgba(0,0,0,0.50);
       font-weight: 700;
-      color: #ffffff; 
+      color: #ffffff;
       font-size: 1.15rem;
     }
 
@@ -125,14 +156,14 @@
     </div>
   </header>
 
-  <!-- Contenu principal -->
+  <!-- المحتوى -->
   <main>
     <h2>الحب: جوهر الوجود وملاذ الروح</h2>
 
-    <p>الحب، تلك الكلمة الصغيرة التي تحمل في حروفها عالماً واسعاً من المعاني، هو أقدم المشاعر وأعمقها في التجربة الإنسانية. منذ أن خُلق الإنسان وهو يسعى إلى الحب، يبحث عنه كما يبحث النبات عن الشمس، وكأن في باطن روحه نداءً خفياً لا يهدأ إلا حين يجد من يبادله الإحساس والحنين.</p>
+    <p>الحب، تلك الكلمة الصغيرة التي تحمل في حروفها عالماً واسعاً من المعاني، هو أقدم المشاعر وأعمقها في التجربة الإنسانية...</p>
 
     <h3>الحب فطرة لا تُكتسب</h3>
-    <p>يولد الإنسان وهو يحمل في داخله بذرة الحب، تنمو مع الأيام وتتفتح مع التجارب. فالحب ليس علماً يُتعلّم، ولا مهارة تُكتسب، بل هو غريزة سامية أودعها الله في النفوس لتكون ميزان التوازن بين العقل والعاطفة، وبين الجسد والروح...</p>
+    <p>يولد الإنسان وهو يحمل في داخله بذرة الحب، تنمو مع الأيام وتتفتح مع التجارب...</p>
 
     <h3>أوجه الحب وتجلّياته</h3>
     <p>ليس الحب نوعاً واحداً، بل له وجوه متعددة تتلون بألوان التجربة الإنسانية...</p>
@@ -155,7 +186,7 @@
     <p>يبقى الحب، رغم اختلاف تعريفاته وتجلياته، أعظم ما وُهب للإنسان...</p>
   </main>
 
-  <!-- Compteur -->
+  <!-- عداد الأيام -->
   <div id="daysCounter">...</div>
 
   <script>
