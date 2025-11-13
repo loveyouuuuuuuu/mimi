@@ -14,28 +14,26 @@
   <style>
     /* Reset بسيط */
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { height: 100%; }
+    html, body { height: 100%; scroll-behavior: smooth; }
 
     body {
       font-family: 'Tajawal', sans-serif;
-      background: #000000; /* Body noir */
-      color: #000000; /* Texte par défaut noir */
+      background: #000000; /* خلفية سوداء */
+      color: #000000;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      padding: 20px;
-      padding-top: 80px; /* pour ne pas couvrir le header */
+      padding-top: 80px; /* حتى لا يغطي الهيدر المحتوى */
     }
 
     .wrap {
       max-width: 1000px;
       margin: 0 auto;
-      padding-top: 20px; /* espace léger sous le header */
+      padding: 20px;
     }
 
     section {
-      display: none; /* Masquer toutes les sections par défaut */
       min-height: calc(100vh - 60px);
-      background: #ffffff; /* Fond blanc */
+      background: #ffffff; /* خلفية بيضاء لكل قسم */
       border-radius: 18px;
       padding: 40px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.10);
@@ -43,14 +41,14 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      margin: 30px 0;
-      color: #000000; /* Texte noir */
+      margin: 40px 0;
+      color: #000000;
     }
 
     h2 {
       font-size: 1.8rem;
       margin-bottom: 12px;
-      color: #000000; /* Titres noirs */
+      color: #000000;
     }
 
     p {
@@ -59,7 +57,7 @@
       margin-bottom: 18px;
       text-align: center;
       max-width: 820px;
-      color: #000000; /* Texte noir */
+      color: #000000;
     }
 
     #daysCounter {
@@ -86,13 +84,13 @@
       backdrop-filter: blur(10px);
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
       padding: 10px 25px;
       z-index: 1000;
       color: #ffffff;
 
-      /* --- الخط الفاصل الرمادي الرقيق مثل Reddit --- */
-      border-bottom: 1px solid #e0e0e0; 
+      /* الخط الفاصل الرمادي الرقيق مثل Reddit */
+      border-bottom: 1px solid #e0e0e0;
     }
 
     header .logo {
@@ -108,27 +106,9 @@
       height: 38px;
     }
 
-    header nav a {
-      color: #ffffff;
-      text-decoration: none;
-      margin: 0 10px;
-      font-weight: 600;
-      transition: color 0.2s;
-      cursor: pointer;
-    }
-
-    header nav a:hover {
-      color: #ffcc00;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
     @media (max-width: 600px) {
       section { padding: 26px; border-radius: 14px; }
       #daysCounter { font-size: 1rem; padding: 10px 14px; }
-      header { flex-direction: column; gap: 8px; }
     }
   </style>
 </head>
@@ -140,12 +120,6 @@
       <img src="logo.site.png" alt="شعار الموقع">
       <span>دلوعتي <span style="color:red;">❤️</span></span>
     </div>
-    <nav>
-      <a data-target="page1">الصفحة الأولى</a>
-      <a data-target="page2">الصفحة الثانية</a>
-      <a data-target="page3">الصفحة الثالثة</a>
-      <a data-target="page4">الصفحة الرابعة</a>
-    </nav>
   </header>
 
   <div class="wrap">
@@ -174,24 +148,6 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const sections = document.querySelectorAll('section');
-      const links = document.querySelectorAll('header nav a');
-
-      // Affiche la première section par défaut
-      sections.forEach(s => s.style.display = 'none');
-      sections[0].style.display = 'flex';
-
-      // Navigation
-      links.forEach(link => {
-        link.addEventListener('click', () => {
-          const target = link.getAttribute('data-target');
-          sections.forEach(s => {
-            s.id === target ? s.style.display = 'flex' : s.style.display = 'none';
-          });
-        });
-      });
-
-      // Compteur
       const el = document.getElementById('daysCounter');
       const start = new Date(2024, 7, 27, 10, 0, 0);
 
