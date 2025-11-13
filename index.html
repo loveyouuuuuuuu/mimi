@@ -14,9 +14,20 @@
   <style>
     /* Reset بسيط */
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { height: 100%; scroll-behavior: smooth; overflow-x: hidden; }
 
+    html {
+      height: 100%;
+      scroll-behavior: smooth;
+      direction: rtl;
+      overflow-x: hidden;
+      scrollbar-gutter: stable; /* يثبت مكان الشريط */
+    }
+
+    /* يجعل شريط التمرير على اليمين */
     body {
+      direction: rtl;
+      unicode-bidi: plaintext;
+      overflow-y: scroll;
       font-family: 'Tajawal', sans-serif;
       background: #000000;
       color: #000000;
@@ -28,8 +39,8 @@
     section {
       min-height: calc(100vh - 60px);
       background: #ffffff;
-      width: 95vw; /* ← تقليل العرض قليلاً لتجنّب ظهور شريط التمرير الأفقي */
-      margin: 0 auto; /* ← يجعل القسم في المنتصف */
+      width: 95vw; /* قريب من عرض الشاشة بدون تجاوز */
+      margin: 50px auto; /* ← مسافة بين الصفحات */
       border-radius: 18px;
       padding: 60px 40px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.10);
@@ -79,7 +90,7 @@
       backdrop-filter: blur(10px);
       display: flex;
       align-items: center;
-      justify-content: flex-start; /* ← الشعار والاسم على اليسار */
+      justify-content: flex-start; /* الشعار على اليسار */
       padding: 10px 25px;
       z-index: 1000;
       color: #ffffff;
@@ -100,7 +111,7 @@
     }
 
     @media (max-width: 600px) {
-      section { width: 100vw; border-radius: 0; padding: 40px 20px; }
+      section { width: 100vw; border-radius: 0; padding: 40px 20px; margin: 20px 0; }
       #daysCounter { font-size: 1rem; padding: 10px 14px; }
     }
   </style>
