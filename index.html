@@ -5,102 +5,96 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Love U</title>
 
+  <link rel="icon" type="image/png" href="logo.site.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
 
     html {
+      scroll-behavior: smooth;
       direction: rtl;
     }
 
-    /* Scrollbar */
-    ::-webkit-scrollbar {
-      width: 10px;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: #121212;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: #666;
-      border-radius: 10px;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-      background: #888;
-    }
-
-    /* Body fixed – no scroll */
     body {
+      font-family: 'Tajawal', sans-serif;
       background: #000;
       color: #fff;
-      font-family: 'Tajawal', sans-serif;
-      overflow: hidden; /* منع السكرول عن البودي */
+      overflow-x: hidden; /* ❗نترك الـ Y طبيعي بدون تخصيص */
     }
 
+    /* الهيدر */
     header {
       position: fixed;
       top: 0;
       right: 0;
       left: 0;
-      height: 60px;
-      padding: 10px 25px;
       background: rgba(0,0,0,0.95);
       backdrop-filter: blur(10px);
       display: flex;
       align-items: center;
+      padding: 10px 25px;
+      height: 60px;
       border-bottom: 1px solid #222;
       z-index: 1000;
+    }
+
+    header .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 1.3rem;
     }
 
     header .logo img {
       height: 38px;
     }
 
-    /* CONTENT SCROLL AREA */
-    .content {
-      position: fixed;
-      top: 60px;        /* نفس ارتفاع الهيدر */
-      right: 0;
-      left: 0;
-      bottom: 0;
-      overflow-y: auto; /* السكرول هنا فقط */
-      overflow-x: hidden;
-      padding-right: 25px; /* الآن نفس مسافة اللوغو */
-    }
-
+    /* النص على اليمين */
     main {
       width: 850px;
-      margin: 20px auto;
-      padding: 20px 20px 100px 20px;
-      text-align: right;
+      margin: 20px 20px 100px 0;
+      padding: 20px 40px 100px 20px;
       line-height: 1.9;
+      text-align: right;
+      padding-top: 80px;
+      direction: rtl;
     }
 
     main h2 {
       color: #ff4d4d;
       margin-bottom: 25px;
       font-size: 2rem;
+      text-align: right;
     }
 
     main h3 {
       color: #ffd4d4;
       margin: 40px 0 10px;
       font-size: 1.4rem;
+      text-align: right;
+    }
+
+    main p {
+      margin-bottom: 15px;
+      font-size: 1.1rem;
     }
 
     blockquote {
+      text-align: right;
+      margin: 25px 0;
+      font-style: italic;
+      color: #ccc;
       border-right: 3px solid #ff4d4d;
       padding-right: 15px;
-      margin: 25px 0;
-      color: #ccc;
-      font-style: italic;
     }
 
+    /* عداد الأيام */
     #daysCounter {
       position: fixed;
       left: 50%;
@@ -109,7 +103,8 @@
       background: rgba(0,0,0,0.85);
       padding: 12px 20px;
       border-radius: 999px;
-      font-weight: bold;
+      color: #fff;
+      font-weight: 700;
       font-size: 1.15rem;
       z-index: 9999;
     }
@@ -117,40 +112,41 @@
     @media (max-width: 900px) {
       main {
         width: auto;
+        margin: 20px 15px 100px 15px;
+        padding: 15px;
       }
     }
   </style>
-</head>
 
+</head>
 <body>
 
 <header>
   <div class="logo">
-    <img src="logo.site.png">
+    <img src="logo.site.png" alt="logo">
     <span>دلوعتي <span style="color:red;">❤️</span></span>
   </div>
 </header>
 
-<div class="content">
-  <main>
-    <h2>الحب: جوهر الوجود وملاذ الروح</h2>
+<main>
+  <h2>الحب: جوهر الوجود وملاذ الروح</h2>
 
-    <p>الحب، تلك الكلمة الصغيرة...</p>
+  <p>الحب، تلك الكلمة الصغيرة التي تحمل في حروفها عالماً واسعاً من المعاني...</p>
 
-    <h3>الحب فطرة لا تُكتسب</h3>
-    <p>يولد الإنسان...</p>
+  <h3>الحب فطرة لا تُكتسب</h3>
+  <p>يولد الإنسان وهو يحمل في داخله بذرة الحب...</p>
 
-    <h3>أوجه الحب وتجلّياته</h3>
-    <p>ليس الحب نوعاً واحداً...</p>
+  <h3>أوجه الحب وتجلّياته</h3>
+  <p>ليس الحب نوعاً واحداً...</p>
 
-    <blockquote>
-      “زدني بفرط الحب فيك تحيّرا...”
-    </blockquote>
+  <blockquote>
+    “زدني بفرط الحب فيك تحيّرا، وارحم حشى بلظى هواك تسعّرا”
+  </blockquote>
 
-    <h3>الحب كقوة خالقة</h3>
-    <p>الحب ليس شعوراً عابراً...</p>
-  </main>
-</div>
+  <h3>الحب كقوة خالقة</h3>
+  <p>الحب ليس شعوراً عابراً...</p>
+
+</main>
 
 <div id="daysCounter">...</div>
 
