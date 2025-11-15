@@ -21,10 +21,10 @@
     html {
       scroll-behavior: smooth;
       scrollbar-gutter: stable;
-      direction: rtl; /* ✅ يجعل شريط التمرير في الجهة اليمنى */
+      direction: rtl; /* شريط التمرير على اليمين */
     }
 
-    /* ✅ شريط تمرير رمادي أنيق مثل ChatGPT */
+    /* شريط تمرير رمادي أنيق */
     ::-webkit-scrollbar {
       width: 10px;
     }
@@ -49,10 +49,11 @@
       color: #fff;
       overflow-y: scroll;
       overflow-x: hidden;
-      padding-top: 80px;
       direction: rtl;
+      /* ❌ إزالة padding-top الكبير */
     }
 
+    /* الهيدر */
     header {
       position: fixed;
       top: 0;
@@ -67,6 +68,7 @@
       z-index: 1000;
       color: #ffffff;
       border-bottom: 1px solid #222;
+      height: 60px;
     }
 
     header .logo {
@@ -82,17 +84,17 @@
       height: 38px;
     }
 
-    /* ✅ جعل النص يبدأ من يمين الشاشة فعليًا */
+    /* المحتوى الرئيسي بعد تعديل المسافة */
     main {
       width: 100%;
-      margin-top: 120px;
-      margin-right: 0;
-      padding: 20px 40px 100px 20px; /* مساحة من اليمين */
+      max-width: 850px;
+      margin: 20px auto 100px auto; /* ✔ فقط 20px من الأعلى */
+      padding: 20px 40px 100px 20px;
       line-height: 1.9;
       color: #f5f5f5;
       text-align: right;
       direction: rtl;
-      display: block;
+      padding-top: 80px; /* إضافة مساحة بسيطة تحت الهيدر */
     }
 
     main h2 {
