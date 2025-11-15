@@ -6,7 +6,6 @@
   <title>Love U</title>
 
   <link rel="icon" type="image/png" href="logo.site.png" />
-
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
@@ -21,32 +20,14 @@
       direction: rtl;
     }
 
-    /* Scrollbar */
-    ::-webkit-scrollbar {
-      width: 10px;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: #121212; /* ← اللون الجديد */
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background-color: #666;
-      border-radius: 10px;
-    }
-
-    ::-webkit-scrollbar-thumb:hover {
-      background-color: #888;
-    }
-
     body {
       font-family: 'Tajawal', sans-serif;
       background: #000;
       color: #fff;
-      overflow-y: scroll;
-      overflow-x: hidden;
+      overflow-x: hidden; /* ❗نترك الـ Y طبيعي بدون تخصيص */
     }
 
+    /* الهيدر */
     header {
       position: fixed;
       top: 0;
@@ -74,10 +55,10 @@
       height: 38px;
     }
 
-    /* نقل النص إلى اليمين مع تقليل المسافة مع السكروول */
+    /* النص على اليمين */
     main {
       width: 850px;
-      margin: 20px 5px 100px 0; /* ← قلّلنا المسافة من 20px إلى 5px */
+      margin: 20px 20px 100px 0;
       padding: 20px 40px 100px 20px;
       line-height: 1.9;
       text-align: right;
@@ -102,7 +83,6 @@
     main p {
       margin-bottom: 15px;
       font-size: 1.1rem;
-      text-align: right;
     }
 
     blockquote {
@@ -114,6 +94,7 @@
       padding-right: 15px;
     }
 
+    /* عداد الأيام */
     #daysCounter {
       position: fixed;
       left: 50%;
@@ -131,7 +112,7 @@
     @media (max-width: 900px) {
       main {
         width: auto;
-        margin: 20px 10px 100px 10px; /* مسافة أيضاً أقل على الموبايل */
+        margin: 20px 15px 100px 15px;
         padding: 15px;
       }
     }
