@@ -15,16 +15,13 @@
       padding: 0;
     }
 
-    html {
-      scroll-behavior: smooth;
-      direction: rtl;
-    }
-
-    body {
+    html, body {
+      height: 100%;
+      overflow: hidden; /* 🚨 منع تمرير الصفحة نفسها مثل ChatGPT */
       font-family: 'Tajawal', sans-serif;
       background: #000;
       color: #fff;
-      overflow-x: hidden;
+      direction: rtl;
     }
 
     /* الهيدر */
@@ -33,14 +30,14 @@
       top: 0;
       right: 0;
       left: 0;
+      height: 60px;
       background: rgba(0,0,0,0.95);
       backdrop-filter: blur(10px);
       display: flex;
       align-items: center;
       padding: 10px 25px;
-      height: 60px;
       border-bottom: 1px solid #222;
-      z-index: 1000;
+      z-index: 100;
     }
 
     header .logo {
@@ -55,29 +52,36 @@
       height: 38px;
     }
 
-    /* النص الرئيسي */
+    /* منطقة التمرير مثل ChatGPT */
+    .scroll-area {
+      position: absolute;
+      top: 60px; /* ⭐ يبدأ أسفل الهيدر تماماً */
+      right: 0;
+      left: 0;
+      bottom: 0;
+      overflow-y: auto; /* التمرير هنا */
+      padding-bottom: 100px;
+    }
+
+    /* المحتوى الرئيسي */
     main {
       width: 850px;
       margin: 20px 20px 100px 0;
       padding: 20px 40px 100px 20px;
       line-height: 1.9;
       text-align: right;
-      padding-top: 80px;
-      direction: rtl;
     }
 
     main h2 {
       color: #ff4d4d;
       margin-bottom: 25px;
       font-size: 2rem;
-      text-align: right;
     }
 
     main h3 {
       color: #ffd4d4;
       margin: 40px 0 10px;
       font-size: 1.4rem;
-      text-align: right;
     }
 
     main p {
@@ -86,7 +90,6 @@
     }
 
     blockquote {
-      text-align: right;
       margin: 25px 0;
       font-style: italic;
       color: #ccc;
@@ -103,21 +106,19 @@
       background: rgba(0,0,0,0.85);
       padding: 12px 20px;
       border-radius: 999px;
-      color: #fff;
       font-weight: 700;
       font-size: 1.15rem;
-      z-index: 9999;
+      z-index: 200;
     }
 
-    /* ⭐ تحسين العرض على الهاتف فقط */
+    /* تحسين الهاتف */
     @media (max-width: 900px) {
       main {
         width: 100%;
         margin: 20px 10px 100px 10px;
-        padding: 15px 15px 80px 15px;
+        padding: 15px;
       }
     }
-
   </style>
 
 </head>
@@ -130,25 +131,29 @@
   </div>
 </header>
 
-<main>
-  <h2>الحب: جوهر الوجود وملاذ الروح</h2>
+<!-- ⭐ منطقة التمرير الجديدة مثل ChatGPT -->
+<div class="scroll-area">
 
-  <p>الحب، تلك الكلمة الصغيرة التي تحمل في حروفها عالماً واسعاً من المعاني...</p>
+  <main>
+    <h2>الحب: جوهر الوجود وملاذ الروح</h2>
 
-  <h3>الحب فطرة لا تُكتسب</h3>
-  <p>يولد الإنسان وهو يحمل في داخله بذرة الحب...</p>
+    <p>الحب، تلك الكلمة الصغيرة التي تحمل في حروفها عالماً واسعاً من المعاني...</p>
 
-  <h3>أوجه الحب وتجلّياته</h3>
-  <p>ليس الحب نوعاً واحداً...</p>
+    <h3>الحب فطرة لا تُكتسب</h3>
+    <p>يولد الإنسان وهو يحمل في داخله بذرة الحب...</p>
 
-  <blockquote>
-    “زدني بفرط الحب فيك تحيّرا، وارحم حشى بلظى هواك تسعّرا”
-  </blockquote>
+    <h3>أوجه الحب وتجلّياته</h3>
+    <p>ليس الحب نوعاً واحداً...</p>
 
-  <h3>الحب كقوة خالقة</h3>
-  <p>الحب ليس شعوراً عابراً...</p>
+    <blockquote>
+      “زدني بفرط الحب فيك تحيّرا، وارحم حشى بلظى هواك تسعّرا”
+    </blockquote>
 
-</main>
+    <h3>الحب كقوة خالقة</h3>
+    <p>الحب ليس شعوراً عابراً...</p>
+  </main>
+
+</div>
 
 <div id="daysCounter">...</div>
 
