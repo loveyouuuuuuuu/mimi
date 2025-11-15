@@ -17,7 +17,7 @@
 
     html, body {
       height: 100%;
-      overflow: hidden; /* منع Scrollbar الصفحة — فقط Scroll لمنطقة المحتوى */
+      overflow: hidden; /* منع Scroll الصفحة */
     }
 
     body {
@@ -55,19 +55,22 @@
       height: 38px;
     }
 
-    /* المنطقة القابلة للتمرير */
+    /* منطقة التمرير */
     .scroll-area {
       position: absolute;
-      top: 60px;      /* يبدأ السكروول تحت الهيدر */
+      top: 60px;     /* يبدأ أسفل الهيدر */
       left: 0;
       right: 0;
       bottom: 0;
-      overflow-y: auto;
-      padding: 20px 35px;
-      direction: rtl; /* يجعل السكروول بار على اليمين */
+      overflow-y: scroll; /* يظهر السكروول دائماً */
+      padding: 20px 30px;
+
+      /* هذا ينقل السكروول لليمين بدون قلب المحتوى */
+      writing-mode: horizontal-tb;
+      unicode-bidi: plaintext;
     }
 
-    /* Scrollbar مثل YouTube */
+    /* Scrollbar YouTube Style */
     .scroll-area::-webkit-scrollbar {
       width: 8px;
     }
